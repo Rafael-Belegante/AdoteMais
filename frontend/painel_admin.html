@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADOTE+ | Painel do Administrador</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script defer src="static/js/api.js"></script>
+    <script defer src="static/js/session.js"></script>
+    <script defer src="static/js/admin.js"></script>
+</head>
+<body>
+    <header class="topbar">
+        <h1>ADOTE+</h1>
+        <nav>
+            <a href="index.html">Mural</a>
+            <button id="btn-sair">Sair</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Usuários cadastrados</h2>
+        <p>Visão geral dos usuários do sistema ADOTE+.</p>
+
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-usuarios">
+                    <tr><td colspan="5">Carregando...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Projeto acadêmico - SENAI/SC - Joinville Sul | ADOTE+</p>
+    </footer>
+</body>
+</html>

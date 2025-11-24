@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADOTE+ | Painel da ONG / Voluntário</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script defer src="static/js/api.js"></script>
+    <script defer src="static/js/session.js"></script>
+    <script defer src="static/js/ong.js"></script>
+</head>
+<body>
+    <header class="topbar">
+        <h1>ADOTE+</h1>
+        <nav>
+            <a href="index.html">Mural</a>
+            <button id="btn-sair">Sair</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Solicitações de adoção pendentes</h2>
+        <p>Analise os pedidos e aprove ou negue conforme os critérios da ONG.</p>
+
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Animal</th>
+                        <th>Adotante</th>
+                        <th>Contato</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-adocoes">
+                    <tr><td colspan="6">Carregando...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Projeto acadêmico - SENAI/SC - Joinville Sul | ADOTE+</p>
+    </footer>
+</body>
+</html>
