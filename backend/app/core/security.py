@@ -11,20 +11,29 @@ from app.core.config import settings
 from app.core.database import get_db
 from app.models.usuario import Usuario
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# Em vez de bcrypt, usamos pbkdf2_sha256 (estável e seguro para esse cenário)
+pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
+
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
+
 def hash_password(password: str) -> str:
+    # Se quiser, já limita tamanho máximo para evitar DoS
+    if len(password) > 128:
+        raise HTTPException(status_code=400, detail="Senha muito longa.")
     return pwd_context.hash(password)
+
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
+
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
     to_encode = data.copy()
     expire = datetime.utcnow() + (expires_delta or timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES))
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, settings.JWT_SECRET_KEY, algorithm=settings.JWT_ALGORITHM)
+
 
 def get_current_user(db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)) -> Usuario:
     credentials_exception = HTTPException(
@@ -44,6 +53,7 @@ def get_current_user(db: Session = Depends(get_db), token: str = Depends(oauth2_
     if user is None:
         raise credentials_exception
     return user
+
 
 def require_role(*roles: str):
     def wrapper(current_user: Usuario = Depends(get_current_user)):

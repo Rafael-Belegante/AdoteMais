@@ -3,7 +3,7 @@
 Website de adoção de animais de rua, com foco em **ação social permanente**
 para amparo aos animais abandonados na região de **Joinville / SC**.
 
-Projeto acadêmico - **SENAI/SC - Joinville Sul**
+Projeto acadêmico - **SENAI/SC**
 
 ## 🎯 Objetivo
 
@@ -40,7 +40,7 @@ A modelagem segue:
 Monorepo simples:
 
 ```bash
-adote_mais/
+adote_plus/
 ├── backend/        # API FastAPI + SQLAlchemy
 ├── frontend/       # HTML/CSS/JS estáticos
 └── README.md
@@ -143,19 +143,3 @@ Acesse: `http://localhost:5500/index.html`
 
 Projeto focado em **responsividade, simplicidade de uso** e **engajamento social**
 em favor dos animais abandonados do estado de SC.
-
-
-## ⚙️ Pronto para produção (base)
-
-- JWT com expiração configurável e chave externa via `.env`;
-- Cabeçalhos de segurança básicos (X-Content-Type-Options, X-Frame-Options, X-XSS-Protection);
-- Papéis separados: `usuario`, `ong`, `admin` com proteção de rotas no backend;
-- Cadastro público sempre cria usuários do tipo `usuario` (evita criação de admin/ong via formulário);
-- Frontend responsivo preparado para mobile e tablets;
-- Arquivo `.env.example` incluído para facilitar configuração em servidores.
-
-Em ambiente real, recomenda-se:
-
-- Executar o backend com `uvicorn` ou `gunicorn` por trás de um proxy reverso (Nginx);
-- Utilizar banco como PostgreSQL em vez de SQLite;
-- Restringir o CORS para o domínio real do frontend (ajustando `BACKEND_CORS_ORIGINS`).
