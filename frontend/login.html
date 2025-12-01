@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ADOTE+ | Login</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <script defer src="static/js/api.js"></script>
+    <script defer src="static/js/session.js"></script>
+    <script defer src="static/js/auth.js"></script>
+  </head>
+  <body data-page="auth">
+    <header class="topbar">
+      <h1 class="logo">ADOTE+</h1>
+      <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container">
+      <div class="card-form">
+        <h2>Entrar</h2>
+        <form id="form-login">
+          <label>E-mail</label>
+          <input type="email" name="email" required />
+
+          <label>Senha</label>
+          <input type="password" name="senha" required />
+
+          <button type="submit">Entrar</button>
+        </form>
+
+        <h3>Cadastro rápido</h3>
+        <form id="form-register">
+          <label>Nome</label>
+          <input type="text" name="nome" required />
+
+          <label>E-mail</label>
+          <input type="email" name="email" required />
+
+          <label>Telefone</label>
+          <input type="text" name="telefone" />
+
+          <label>Senha</label>
+          <input type="password" name="senha" required />
+
+          <label>Tipo de conta</label>
+          <select name="tipo">
+            <option value="usuario">Usuário (Adotante)</option>
+            <option value="anunciante">Anunciante</option>
+          </select>
+
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Projeto acadêmico - SENAI/SC | ADOTE+</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ADOTE+ | Minhas Adoções</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <script defer src="static/js/api.js"></script>
+    <script defer src="static/js/session.js"></script>
+    <script defer src="static/js/adocao.js"></script>
+    <script defer src="static/js/animais.js"></script>
+    <script defer src="static/js/painel_usuario.js"></script>
+  </head>
+  <body data-page="minhas-adocoes">
+    <header class="topbar">
+      <h1 class="logo">ADOTE+</h1>
+      <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <h2>Minhas adoções</h2>
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Animal</th>
+                <th>Anunciante</th>
+                <th>Mensagem</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-minhas-adocoes">
+              <tr><td colspan="5">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Projeto acadêmico - SENAI/SC | ADOTE+</p>
+    </footer>
+  </body>
+</html>

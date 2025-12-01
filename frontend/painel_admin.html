@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ADOTE+ | Painel do Admin</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <script defer src="static/js/api.js"></script>
+    <script defer src="static/js/session.js"></script>
+    <script defer src="static/js/painel_admin.js"></script>
+  </head>
+  <body data-page="painel-admin">
+    <header class="topbar">
+      <h1 class="logo">ADOTE+</h1>
+      <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container">
+      <section id="sec-usuarios" class="section">
+        <h2>Usuários</h2>
+        <p>Gerencie as contas do sistema.</p>
+
+        <form id="form-criar-usuario">
+          <label>Nome</label>
+          <input type="text" name="nome" required />
+
+          <label>E-mail</label>
+          <input type="email" name="email" required />
+
+          <label>Telefone</label>
+          <input type="text" name="telefone" />
+
+          <label>Senha</label>
+          <input type="password" name="senha" required />
+
+          <label>Tipo</label>
+          <select name="tipo">
+            <option value="usuario">Usuário</option>
+            <option value="anunciante">Anunciante</option>
+            <option value="admin">Admin</option>
+          </select>
+
+          <button type="submit">Criar usuário</button>
+        </form>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Tipo</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-usuarios">
+              <tr><td colspan="6">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="sec-logs" class="section">
+        <h2>Auditoria</h2>
+        <p>Consulte o histórico de ações do sistema.</p>
+
+        <form id="form-filtro-logs" class="filters">
+          <div>
+            <label>ID Usuário (opcional)</label>
+            <input type="number" name="id_usuario" min="1" />
+          </div>
+          <div>
+            <button type="submit">Filtrar</button>
+          </div>
+        </form>
+
+        <div class="table-wrapper">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID Log</th>
+                <th>Data/Hora</th>
+                <th>ID Usuário</th>
+                <th>Ação / Detalhe</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-logs">
+              <tr><td colspan="4">Carregando...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Projeto acadêmico - SENAI/SC | ADOTE+</p>
+    </footer>
+  </body>
+</html>

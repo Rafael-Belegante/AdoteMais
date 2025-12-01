@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ADOTE+ | Mural</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <script defer src="static/js/api.js"></script>
+    <script defer src="static/js/session.js"></script>
+    <script defer src="static/js/adocao.js"></script>
+    <script defer src="static/js/animais.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // filtro público do mural
+        registrarFiltro("lista-animais-publico", "form-filtro-publico");
+      });
+    </script>
+  </head>
+  <body data-page="mural-publico">
+    <header class="topbar">
+      <h1 class="logo">ADOTE+</h1>
+      <nav id="main-nav"></nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h2>Adoção de animais de rua</h2>
+        <p>
+          Sistema de apoio permanente aos animais abandonados, conectando
+          adotantes e anunciantes responsáveis.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Mural de animais</h2>
+
+        <form id="form-filtro-publico" class="filters">
+          <div>
+            <label>Buscar</label>
+            <input type="text" name="q" placeholder="Nome, raça, descrição..." />
+          </div>
+          <div>
+            <label>Espécie</label>
+            <select name="especie">
+              <option value="">Todas</option>
+              <option value="cachorro">Cachorro</option>
+              <option value="gato">Gato</option>
+              <option value="outros">Outros</option>
+            </select>
+          </div>
+          <div>
+            <label>Porte</label>
+            <select name="porte">
+              <option value="">Todos</option>
+              <option value="pequeno">Pequeno</option>
+              <option value="medio">Médio</option>
+              <option value="grande">Grande</option>
+            </select>
+          </div>
+          <div>
+            <label>Sexo</label>
+            <select name="sexo">
+              <option value="">Ambos</option>
+              <option value="macho">Macho</option>
+              <option value="femea">Fêmea</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit">Filtrar</button>
+          </div>
+        </form>
+
+        <div id="lista-animais-publico" class="card-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Projeto acadêmico - SENAI/SC | ADOTE+</p>
+    </footer>
+  </body>
+</html>
